@@ -1,21 +1,21 @@
-from typing import List
+from typing import List, Optional
 
 
 class KSum:
     def __init__(self, array: List[int], target: int):
-        self.array = array
-        self.target = target
+        self.array: List[int] = array
+        self.target: int = target
 
         list.sort(self.array)
-        self.length = len(self.array)
-        self.result_list = []
+        self.length: int = len(self.array)
+        self.result_list: List[List[int]] = []
 
     def two_sum(self, s: int, e: int, target_sum: int, curr_list: List[int]) -> None:
-        start = s
-        end = self.length - 1
+        start: int = s
+        end: int = self.length - 1
 
         while start < end:
-            curr_sum = self.array[start] + self.array[end]
+            curr_sum: int = self.array[start] + self.array[end]
             if curr_sum == target_sum:
                 curr_list.append(self.array[start])
                 curr_list.append(self.array[end])

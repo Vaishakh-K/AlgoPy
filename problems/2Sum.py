@@ -3,17 +3,17 @@ from typing import List
 
 class TwoSum:
     def __init__(self, array: List[int], target: int):
-        self.array = array
-        self.target = target
+        self.array: List[int] = array
+        self.target: int = target
 
-        self.length = len(array)
+        self.length: int = len(array)
         list.sort(self.array)
 
     def get_2sum(self) -> List[List[int]]:
-        start = 0
-        end = self.length - 1
+        start: int = 0
+        end: int = self.length - 1
 
-        list_2sum = []
+        list_2sum: List[List[int]] = []
         while start < end < self.length:
             curr_sum = self.array[start] + self.array[end]
             if curr_sum == self.target:
