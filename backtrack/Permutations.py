@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Set
 
 
 class Permutations:
@@ -6,11 +6,11 @@ class Permutations:
         self.string: str = string
 
         self.length = len(string)
-        self.all_permutations: List[str] = []
+        self.all_permutations: Set[str] = set()
 
     def get_permutation(self, running_str: List[str], chars: List[str]) -> None:
         if len(running_str) == self.length:
-            self.all_permutations.append("".join(running_str))
+            self.all_permutations.add("".join(running_str))
             return
 
         for i, c in enumerate(chars):
