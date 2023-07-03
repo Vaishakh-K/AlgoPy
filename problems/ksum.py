@@ -27,20 +27,26 @@ class KSum:
                 curr_list.remove(self.array[end])
                 end -= 1
                 start += 1
-                while start < self.length and self.array[start] == self.array[start - 1]:
+                while (
+                    start < self.length and self.array[start] == self.array[start - 1]
+                ):
                     start += 1
             elif curr_sum > target_sum:
                 end -= 1
             else:
                 start += 1
 
-    def get_nums_summing_to_target(self, s: int, target_sum: int, k: int, curr_list: List[int]) -> None:
+    def get_nums_summing_to_target(
+        self, s: int, target_sum: int, k: int, curr_list: List[int]
+    ) -> None:
         if k == 2:
             return self.two_sum(s, self.length - 1, target_sum, curr_list)
 
         while s < self.length:
             curr_list.append(self.array[s])
-            self.get_nums_summing_to_target(s + 1, target_sum - self.array[s], k - 1, curr_list)
+            self.get_nums_summing_to_target(
+                s + 1, target_sum - self.array[s], k - 1, curr_list
+            )
             curr_list.remove(self.array[s])
             s += 1
             while s < self.length and self.array[s] == self.array[s - 1]:

@@ -1,5 +1,6 @@
 from typing import Dict, List
 
+
 class SortAnagrams:
     def __init__(self, strs: List[str]) -> str:
         self.strs = strs
@@ -33,12 +34,10 @@ class SortAnagrams:
         return anagrams_list
 
 
-sorted_anagrams = SortAnagrams(["eat","tea","tan","ate","nat","bat"])
+sorted_anagrams = SortAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
 anagrams = sorted_anagrams.get_sorted_anagrams()
 print(anagrams)
 
-sorted_anagrams = SortAnagrams(["",""])
+sorted_anagrams = SortAnagrams(["", ""])
 anagrams = sorted_anagrams.get_sorted_anagrams()
 print(anagrams)
-
-

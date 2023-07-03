@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/maximum-subarray/
 # https://leetcode.com/problems/maximum-product-subarray/
 
+
 class MaxSubArray:
     def __init__(self, array):
         self.array = array

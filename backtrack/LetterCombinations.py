@@ -29,11 +29,11 @@ class LetterCombinations:
 
         char_idx = 0
         for digit in all_digits:
-            if digit == '7' or digit == '9':
-                self.map[digit] = [c for c in chars[char_idx:char_idx + 4]]
+            if digit == "7" or digit == "9":
+                self.map[digit] = [c for c in chars[char_idx : char_idx + 4]]
                 char_idx += 4
             else:
-                self.map[digit] = [c for c in chars[char_idx:char_idx + 3]]
+                self.map[digit] = [c for c in chars[char_idx : char_idx + 3]]
                 char_idx += 3
 
         curr_string = []

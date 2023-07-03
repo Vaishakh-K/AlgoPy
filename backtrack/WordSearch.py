@@ -9,9 +9,15 @@ class WordSearch:
         self.dirs: List[List[int]] = [[-1, 0], [1, 0], [0, -1], [0, 1]]
 
     def valid_cell(self, r: int, c: int, visited: List[List[int]]) -> bool:
-        return 0 <= r < len(self.board) and 0 <= c < len(self.board[0]) and visited[r][c] == 0
+        return (
+            0 <= r < len(self.board)
+            and 0 <= c < len(self.board[0])
+            and visited[r][c] == 0
+        )
 
-    def search_string(self, match_str: str, r: int, c: int, visited: List[List[int]]) -> bool:
+    def search_string(
+        self, match_str: str, r: int, c: int, visited: List[List[int]]
+    ) -> bool:
         if len(match_str) == 0:
             return True
 
@@ -37,7 +43,9 @@ class WordSearch:
         for r in range(self.rows):
             for c in range(self.cols):
                 if self.board[r][c] == word[0]:
-                    visited = [[0 for c_i in range(self.cols)] for r_i in range(self.rows)]
+                    visited = [
+                        [0 for c_i in range(self.cols)] for r_i in range(self.rows)
+                    ]
                     if self.search_string(word, r, c, visited):
                         return True
 
@@ -45,4 +53,8 @@ class WordSearch:
 
 
 search = WordSearch()
-print(search.exist([["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]], "SEED"))
+print(
+    search.exist(
+        [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]], "SEED"
+    )
+)

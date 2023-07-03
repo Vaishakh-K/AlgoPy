@@ -18,4 +18,3 @@ class KMostFrequent:
 
 km = KMostFrequent([1, 3, 4, 2, 2, 1, 6, 1, 1, 1, 6, 6, 2, 3, 6], 2)
 print(km.find_k_most_frequent())
-

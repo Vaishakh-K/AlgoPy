@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+
 class RotateByK:
     def __init__(self, nums: List[int], k: int):
         self.nums: List[int] = nums

@@ -17,7 +17,7 @@ class Combinations:
         else:
             for i in range(len(rem_list)):
                 list_so_far.append(rem_list[i])
-                self.construct_combinations(list_so_far, rem_list[i+1:])
+                self.construct_combinations(list_so_far, rem_list[i + 1 :])
                 list_so_far.pop()
 
     def get_combinations(self, n, k):
